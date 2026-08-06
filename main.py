@@ -1,16 +1,63 @@
-# This is a sample Python script.
+"""
+Функция guest_menu выводит меню роли
+гость пользователю и предлагает ввести
+опцию из меню
+"""
+def guest_menu ():
+    print("""
+=== GUEST MENU ===
+1. Register
+2. Login
+0. Exit
+""")
+    return int(input("Select an option: "))
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+
+"""
+Функция user_menu выводит меню роли 
+юзер пользователю и предлагает ввести 
+опцию из меню. список опций другой
+"""
+def user_menu ():
+    print("""
+=== USER MENU ===
+1. Show profile
+2. Change password
+0. Logout
+""")
+    return int(input("Select an option: "))
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+"""
+Функция admin_menu выводит меню роли 
+админ пользователю и предлагает ввести 
+опцию из меню. список опций расширен и доступ 
+имеет только админ
+"""
+def admin_menu ():
+    print("""
+=== ADMIN MENU ===
+1. Show all users
+2. Find user
+3. Block user
+4. Unblock user
+5. Change user role
+6. Show profile
+0. Logout
+""")
+    return int(input("Select an option: "))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+"""
+Функция handle_guest_choice вызывает 
+определенную функцию при выборе опции иначе выдает ошибку
+"""
+def handle_guest_choice(choice):
+    if choice == 1:
+        register()
+    elif choice == 2:
+        login()
+    elif choice == 0:
+        exit()
+    else:
+        print("Invalid option")
