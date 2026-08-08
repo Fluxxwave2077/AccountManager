@@ -3,14 +3,18 @@
 гость пользователю и предлагает ввести
 опцию из меню
 """
-def guest_menu ():
-    print("""
+def guest_menu():
+    while True:
+        print("""
 === GUEST MENU ===
 1. Register
 2. Login
 0. Exit
 """)
-    return int(input("Select an option: "))
+        try:
+            return int(input("Select an option: "))
+        except ValueError:
+            print("Invalid option")
 
 
 """
@@ -18,14 +22,18 @@ def guest_menu ():
 юзер пользователю и предлагает ввести 
 опцию из меню. список опций другой
 """
-def user_menu ():
-    print("""
+def user_menu():
+    while True:
+        print("""
 === USER MENU ===
 1. Show profile
 2. Change password
-0. Logout
+0. Log out
 """)
-    return int(input("Select an option: "))
+        try:
+            return int(input("Select an option: "))
+        except ValueError:
+            print("Invalid option")
 
 
 """
@@ -34,8 +42,9 @@ def user_menu ():
 опцию из меню. список опций расширен и доступ 
 имеет только админ
 """
-def admin_menu ():
-    print("""
+def admin_menu():
+    while True:
+        print("""
 === ADMIN MENU ===
 1. Show all users
 2. Find user
@@ -45,19 +54,84 @@ def admin_menu ():
 6. Show profile
 0. Logout
 """)
-    return int(input("Select an option: "))
+        try:
+            return int(input("Select an option: "))
+        except ValueError:
+            print("Invalid option")
 
+
+
+current_user = None
 
 """
 Функция handle_guest_choice вызывает 
 определенную функцию при выборе опции иначе выдает ошибку
 """
 def handle_guest_choice(choice):
+    global current_user
+
     if choice == 1:
         register()
     elif choice == 2:
-        login()
+        current_user = login()
     elif choice == 0:
-        exit()
+        exit_app()
     else:
         print("Invalid option")
+
+
+
+
+def handle_user_choice(choice):
+    global current_user
+
+    if choice == 1:
+        show_profile(current_user)
+    elif choice == 2:
+        change_password(current_user)
+    elif choice == 0:
+        log_out()
+        current_user = None
+    else:
+        print("Invalid option")
+
+
+
+
+def handle_admin_choice(choice):
+    global current_user
+
+    if choice == 1:
+        show_users()
+    elif choice == 2:
+        find_user()
+    elif choice == 3:
+        block_user()
+    elif choice == 4:
+        unblock_user()
+    elif choice == 5:
+        change_user_role()
+    elif choice == 6:
+        show_profile(current_user)
+    elif choice == 0:
+        log_out()
+        current_user = None
+
+
+def roles_pass():
+
+    if current_user is None:
+        choice = guest_menu()
+        handle_guest_choice(choice)
+    elif current_user["role"] == "user":
+        choice = user_menu()
+        handle_user_choice(choice)
+    elif current_user["role"] == "admin":
+        choice = admin_menu()
+        handle_admin_choice(choice)
+    else:
+        print("Unknown role")
+
+def main():
+    while True:
+        roles_pass()
