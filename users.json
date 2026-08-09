@@ -1,0 +1,26 @@
+{
+    "admin_1": {
+        "username": "admin",
+        "role": "admin",
+        "password_hash": "$2b$12$r/.MSeyx3TjD26xPSznJe.CYsQtb60490R3UiRlM6aaXMpspDSJwy",
+        "blocked": false
+    },
+    "user_1": {
+        "username": "Vasya",
+        "password_hash": "$2b$12$P70hZspxJb.4bvkfLCtV3uyWEZ/YRs6jVrtpZpgbVupV.FOD9WIIy",
+        "role": "user",
+        "blocked": false
+    },
+    "user_2": {
+        "username": "Alexey",
+        "password_hash": "$2b$12$v8r5YhOuat9Dl2rUvMt8NeZNuhggYOdtGYr3SiNmvQ9RCXOYPKWyi",
+        "role": "user",
+        "blocked": false
+    },
+    "user_3": {
+        "username": "Igor",
+        "password_hash": "$2b$12$k91hKHpdUbIlc7qZi0F9ZOqQahlQfmdGj6Kri6iz0W9mVs6hxsGSq",
+        "role": "user",
+        "blocked": false
+    }
+}
