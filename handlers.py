@@ -1,5 +1,5 @@
-from auth import register, login
-from options import log_out, exit_app
+from auth import register, login, change_password
+from options import log_out, exit_app, show_profile, show_users, find_user, set_block_status
 
 """
 Функция handle_guest_choice вызывает 
@@ -30,7 +30,7 @@ def handle_user_choice(choice, current_user):
     else:
         print("Invalid option")
 
-
+    return current_user
 
 
 def handle_admin_choice(choice, current_user):
@@ -40,12 +40,8 @@ def handle_admin_choice(choice, current_user):
     elif choice == 2:
         find_user()
     elif choice == 3:
-        block_user()
-    elif choice == 4:
-        unblock_user()
-    elif choice == 5:
-        change_user_role()
-    elif choice == 6:
         show_profile(current_user)
     elif choice == 0:
         log_out()
+
+    return current_user

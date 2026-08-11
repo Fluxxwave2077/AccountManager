@@ -7,7 +7,7 @@
     },
     "user_1": {
         "username": "Vasya",
-        "password_hash": "$2b$12$P70hZspxJb.4bvkfLCtV3uyWEZ/YRs6jVrtpZpgbVupV.FOD9WIIy",
+        "password_hash": "$2b$12$NHqqGn5xYpgpAJEfweKxge84HiXRpsEa.JoMm5mq/SX500kEKBLgi",
         "role": "user",
         "blocked": false
     },
