@@ -22,4 +22,5 @@ def main():
     while True:
         current_user = roles_pass(current_user)
 
-main()
+if __name__ == "__main__":
+    main()
