@@ -22,8 +22,6 @@ def register():
     return user_id
 
 
-
-
 def login():
     username = input("Enter your Username: ")
 

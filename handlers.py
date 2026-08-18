@@ -1,10 +1,6 @@
 from auth import register, login, change_password
 from options import log_out, exit_app, show_profile, show_users, find_user, set_block_status
 
-"""
-Функция handle_guest_choice вызывает 
-определенную функцию при выборе опции иначе выдает ошибку
-"""
 def handle_guest_choice(choice, current_user):
 
     if choice == 1:

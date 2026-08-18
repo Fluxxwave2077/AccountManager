@@ -17,6 +17,7 @@ def roles_pass(current_user):
 
     return current_user
 
+
 def main():
     current_user = None
     while True:

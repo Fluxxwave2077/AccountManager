@@ -1,16 +1,17 @@
 from users import users, save_users
 
-
 def exit_app():
     exit()
 
-def log_out():
 
+def log_out():
     print("Logged out")
     return None
 
+
 def show_profile(current_user):
     print(f"=== PROFILE ===\nUsername: {current_user['username']},\nRole: {current_user['role']}")
+
 
 def show_users():
     for user_id in users:
@@ -19,6 +20,7 @@ def show_users():
             f"Role: {users[user_id]['role']} | " 
             f"Blocked: {users[user_id]['blocked']}"
         )
+
 
 def find_user():
     username = input("Enter username to find user: ")
@@ -35,6 +37,7 @@ def find_user():
     if not found:
         print("Username not found!!!")
 
+
 def user_actions(user):
     print("""
 1. Block/Unblock user
@@ -49,6 +52,7 @@ def user_actions(user):
         return
     else:
         print("Invalid option")
+
 
 def set_block_status(user):
     if user['blocked']:
